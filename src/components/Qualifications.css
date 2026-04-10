@@ -1,0 +1,115 @@
+.qualification-container {
+  max-width: 768px;
+  margin: 2rem auto 0;
+}
+
+.qualification-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.qualification-button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  padding-bottom: 5px;
+}
+
+.qualification-button:hover {
+  color: var(--accent-color);
+}
+
+.qualification-active {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.qualification-sections {
+  padding: 3rem;
+}
+
+.qualification-content {
+  display: none;
+}
+
+.qualification-content-active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.qualification-data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+.qualification-right {
+  text-align: right;
+  justify-self: end;
+}
+
+.qualification-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.qualification-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.qualification-calendar {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.qualification-rounder {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.qualification-line {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: var(--text-secondary);
+  transform: translate(6px, -7px);
+}
+
+.qualification-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+  .qualification-data {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .qualification-rounder, .qualification-line {
+    display: none;
+  }
+
+  .qualification-right {
+    text-align: left;
+    justify-self: start;
+  }
+}
