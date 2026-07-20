@@ -29,10 +29,61 @@
 
 .contact-links {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.contact-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.contact-form {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  color: var(--text-primary);
+  border-radius: 4px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .contact-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 15px;
 }
 
 .contact-item {
@@ -44,11 +95,14 @@
   border-radius: 8px;
   transition: transform 0.3s ease;
   min-width: 200px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
 }
 
 .contact-item:hover {
   transform: translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 243, 255, 0.05);
+  border-color: rgba(0, 243, 255, 0.2);
 }
 
 .contact-icon {
@@ -58,20 +112,23 @@
 .contact-item h3 {
   font-size: 1rem;
   margin-bottom: 0.2rem;
+  color: var(--text-primary);
 }
 
 .contact-item p {
   font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.contact-btn {
-  font-size: 1.2rem;
-  padding: 15px 40px;
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
   .contact-banner {
     padding: 2rem;
+  }
+  .contact-layout {
+    flex-direction: column;
+  }
+  .contact-form {
+    width: 100%;
+    padding: 1.5rem;
   }
 }

@@ -6,43 +6,65 @@
 .qualification-tabs {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   gap: 2rem;
 }
 
 .qualification-button {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
   color: var(--text-secondary);
   cursor: pointer;
   transition: var(--transition);
-  padding-bottom: 5px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .qualification-button:hover {
   color: var(--accent-color);
+  background: rgba(0, 243, 255, 0.05);
+  border-color: rgba(0, 243, 255, 0.2);
 }
 
 .qualification-active {
-  color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
+  color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  background: rgba(188, 19, 254, 0.1);
+  box-shadow: 0 0 15px rgba(188, 19, 254, 0.2), inset 0 0 10px rgba(188, 19, 254, 0.2);
 }
 
 .qualification-sections {
   padding: 3rem;
+  position: relative;
+}
+
+.qualification-sections::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(0, 243, 255, 0.05) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(0, 243, 255, 0.05) 50%, transparent 52%);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .qualification-content {
   display: none;
+  position: relative;
+  z-index: 1;
 }
 
 .qualification-content-active {
   display: block;
-  animation: fadeIn 0.5s ease;
+  animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -50,6 +72,7 @@
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   column-gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .qualification-right {
@@ -58,44 +81,56 @@
 }
 
 .qualification-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Chakra Petch', sans-serif;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .qualification-subtitle {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
-  color: var(--text-secondary);
+  color: var(--accent-color);
 }
 
 .qualification-calendar {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: monospace;
 }
 
 .qualification-rounder {
   display: inline-block;
-  width: 13px;
-  height: 13px;
-  background-color: var(--accent-color);
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-secondary);
+  border: 3px solid var(--bg-color);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-glow);
+  box-shadow: 0 0 15px var(--accent-secondary);
+  z-index: 2;
+  position: relative;
 }
 
 .qualification-line {
   display: block;
   width: 2px;
   height: 100%;
-  background-color: var(--text-secondary);
-  transform: translate(6px, -7px);
+  background: linear-gradient(to bottom, var(--accent-secondary), var(--accent-color));
+  transform: translate(7px, -7px);
+  z-index: 1;
 }
 
 .qualification-desc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
   margin-bottom: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-left: 2px solid var(--accent-color);
 }
 
 @media (max-width: 576px) {

@@ -46,15 +46,19 @@ const Qualifications = () => {
 
             {/* Education 2 */}
             <div className="qualification-data">
+              <div></div>
               <div>
                 <span className="qualification-rounder"></span>
               </div>
               <div className="qualification-right">
-                <h3 className="qualification-title">Full-stack Development</h3>
+                <h3 className="qualification-title">Full-Stack Development Certification</h3>
                 <span className="qualification-subtitle">Nxtwave Disruptive Technologies</span>
                 <div className="qualification-calendar">
                   🗓️ Nov 2024 - Present
                 </div>
+                <p className="qualification-desc">
+                  Coursework includes building a Generative AI feature using an LLM API.
+                </p>
               </div>
             </div>
           </div>

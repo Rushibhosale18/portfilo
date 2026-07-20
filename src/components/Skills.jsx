@@ -3,20 +3,32 @@ import './Skills.css';
 
 const skillsData = [
   {
-    category: "Languages & Concepts",
-    skills: ["Python", "C++", "Java", "JavaScript", "Data Structures & Algorithms", "OOPs", "REST APIs"]
+    category: "Programming Languages",
+    skills: ["Python", "Java", "C", "C++", "JavaScript"]
   },
   {
-    category: "Frontend Development",
-    skills: ["HTML", "CSS", "React.js", "Bootstrap", "JavaScript"]
+    category: "Core CS Concepts",
+    skills: ["Data Structures & Algorithms (DSA)", "OOP", "REST APIs", "JWT Authentication"]
   },
   {
-    category: "Backend Development",
-    skills: ["Node.js", "Express.js", "Socket.io", "JWT Authentication"]
+    category: "Databases",
+    skills: ["SQL", "MySQL", "MongoDB"]
   },
   {
-    category: "Database & Tools",
-    skills: ["MongoDB", "MySQL", "SQL", "Git", "GitHub", "Postman", "Razorpay"]
+    category: "Frontend",
+    skills: ["React.js", "HTML", "CSS", "Bootstrap", "JavaScript"]
+  },
+  {
+    category: "Backend",
+    skills: ["Node.js", "Express.js", "Socket.io"]
+  },
+  {
+    category: "AI / ML & GenAI",
+    skills: ["PyTorch (fundamentals)", "Generative AI (LLM API integration)"]
+  },
+  {
+    category: "Tools & Platforms",
+    skills: ["Git", "GitHub", "Postman", "VS Code", "Render", "Netlify", "Vercel", "Razorpay"]
   }
 ];
 
@@ -29,7 +41,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="section skills">
-      <h2 className="section-title">My Technical Skills</h2>
+      <h2 className="section-title">Player Stats</h2>
       <div className="skills-container">
         {skillsData.map((data, index) => (
           <div 
@@ -39,7 +51,7 @@ const Skills = () => {
           >
             <div className="skills-header">
               <h3>{data.category}</h3>
-              <span className="icon">{activeIndex === index ? '-' : '+'}</span>
+              <span className="icon">{activeIndex === index ? '[ - ]' : '[ + ]'}</span>
             </div>
             <div className={`skills-content ${activeIndex === index ? 'show' : ''}`}>
               <ul className="skills-list">

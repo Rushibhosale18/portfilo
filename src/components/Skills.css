@@ -11,6 +11,18 @@
   cursor: pointer;
   overflow: hidden;
   transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.skills-accordion:hover {
+  border-left: 3px solid var(--accent-color);
+  background: rgba(0, 243, 255, 0.05);
+}
+
+.skills-accordion.active {
+  border-left: 3px solid var(--accent-secondary);
+  background: rgba(188, 19, 254, 0.05);
+  box-shadow: inset 0 0 20px rgba(188, 19, 254, 0.1);
 }
 
 .skills-header {
@@ -21,47 +33,74 @@
 }
 
 .skills-header h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
+
+.skills-accordion.active .skills-header h3 {
+  color: var(--accent-secondary);
+  text-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
 }
 
 .skills-header .icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--accent-color);
   font-weight: bold;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 .skills-content {
   max-height: 0;
   padding: 0 2rem;
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .skills-accordion.active .skills-content {
-  max-height: 300px;
+  max-height: 500px;
   padding-bottom: 1.5rem;
   opacity: 1;
 }
 
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
 }
 
 .skills-list li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--text-secondary);
+  gap: 12px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.skills-list li:hover {
+  transform: translateX(5px);
+  border-color: var(--accent-color);
+  background: rgba(0, 243, 255, 0.1);
 }
 
 .skill-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background-color: var(--accent-color);
-  border-radius: 50%;
+  border-radius: 0;
   display: inline-block;
-  box-shadow: 0 0 10px var(--accent-glow);
+  box-shadow: 0 0 8px var(--accent-glow);
+  transform: rotate(45deg);
+}
+
+.skills-accordion.active .skill-dot {
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 8px rgba(188, 19, 254, 0.6);
 }

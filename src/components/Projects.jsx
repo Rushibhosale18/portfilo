@@ -4,24 +4,27 @@ import './Projects.css';
 const projectData = [
   {
     title: "Fusion Electronics",
-    category: "Full Stack E-Commerce",
-    tech: "React.js, Node.js, Express.js, MongoDB, JWT",
-    desc: "Built a complete full-stack e-commerce platform with product listing, cart management, and order placement. Implemented secure user authentication using JWT and bcrypt.",
-    liveUrl: "https://fusion-electronics-2.onrender.com"
-  },
-  {
-    title: "Symptomsync",
-    category: "Health Symptom Tracker",
-    tech: "React.js, Node.js, Express.js, MongoDB",
-    desc: "Developed a health-tech web app enabling users to log and track daily symptoms with a personalised dashboard. Built secure user login and RESTful APIs.",
-    liveUrl: "https://upchaarinfo.vercel.app"
+    category: "Full-Stack E-Commerce Platform",
+    tech: "React.js, Node.js, Express.js, MongoDB, JWT, REST APIs, Render",
+    desc: "Built a full-stack e-commerce platform with product listings, cart management, and order placement. Implemented secure authentication using JWT tokens and bcrypt password hashing; deployed on Render with MongoDB Atlas.",
+    liveUrl: "https://fusion-electronics-2.onrender.com",
+    githubUrl: "https://github.com/Rushibhosale18/fusion-electronics"
   },
   {
     title: "ChatPay",
     category: "Real-Time Chat & Payment App",
-    tech: "React.js, Node.js, Socket.io, Razorpay",
-    desc: "Implemented live user presence tracking and real-time message delivery. Integrated Razorpay payment gateway for in-app money transfers.",
-    liveUrl: "https://chatpay-final.vercel.app"
+    tech: "React.js, Node.js, Express.js, MongoDB, Socket.io, Razorpay, REST APIs, Vercel",
+    desc: "Implemented live user presence tracking and real-time message delivery using Socket.io. Integrated Razorpay payment gateway for in-app money transfers with full transaction history; secured with JWT-based auth.",
+    liveUrl: "https://chatpay-final.vercel.app",
+    githubUrl: "https://github.com/Rushibhosale18/Real-Time-Chat-App-with-Payments"
+  },
+  {
+    title: "Symptomsync",
+    category: "Health Symptom Tracker",
+    tech: "React.js, Node.js, Express.js, MongoDB, REST APIs, Vercel",
+    desc: "Developed a health-tech web app enabling users to log and track daily symptoms via a personalized dashboard. Designed RESTful backend APIs to store, retrieve, and update user health data in MongoDB; built a responsive React UI.",
+    liveUrl: "https://upchaarinfo.vercel.app",
+    githubUrl: null
   }
 ];
 
@@ -33,13 +36,20 @@ const Projects = () => {
         {projectData.map((project, index) => (
           <div key={index} className="project-card glass">
             <div className="project-content">
-              <span className="project-category">{project.category}</span>
+              <span className="project-category">[{project.category}]</span>
               <h3 className="project-title">{project.title}</h3>
-              <p className="project-tech"><strong>Tech:</strong> {project.tech}</p>
+              <p className="project-tech"><strong>Tech Stack:</strong> {project.tech}</p>
               <p className="project-desc">{project.desc}</p>
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{marginTop: 'auto'}}>
-                View Live
-              </a>
+              <div className="project-actions">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                  Launch App
+                </a>
+                {project.githubUrl && (
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                    View Source
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

@@ -7,33 +7,33 @@ const About = () => {
       <h2 className="section-title">About Me</h2>
       <div className="about-content glass">
         <div className="about-text">
-          <h3>Summary</h3>
+          <h3>Professional Summary</h3>
           <p>
-            Aspiring Full Stack Developer and final-year BE Electronics & Telecommunication Engineering student (2026) with hands-on experience building full stack web applications using React, Node.js, Express.js, and MongoDB.
+            Full-stack developer with experience in building Gen AI features using LLM API. Hands-on experience building production style web applications using React, Node.js, Express.js, and MongoDB. 
           </p>
           <p>
-            Developed multiple projects implementing secure authentication, REST APIs, real-time features using Socket.io, and payment integration with Razorpay. Strong understanding of Data Structures & Algorithms, OOPs, and clean software architecture.
+            Proficient in Python, SQL, and Data Structures & Algorithms (DSA), with a strong foundation in OOP and clean software architecture, plus working exposure to PyTorch fundamentals and Generative AI through LLM API integration.
           </p>
           <p>
-            Looking to leverage technical skills to build high quality software in an innovative team. Open to relocation.
+            Delivered projects covering secure authentication, REST API design, real-time features with Socket.io, and payment integration with Razorpay. Seeking to apply strong programming fundamentals and full-stack skills on an innovative engineering team. Open to relocation.
           </p>
           
           <div className="about-info">
-            <div className="info-box">
-              <span className="info-title">Degree</span>
-              <span className="info-desc">B.E. E&TC (8.36 CGPA)</span>
+            <div className="info-box glass-panel">
+              <span className="info-title">ROLE</span>
+              <span className="info-desc">Software Engineer</span>
             </div>
-            <div className="info-box">
-              <span className="info-title">Location</span>
+            <div className="info-box glass-panel">
+              <span className="info-title">LOCATION</span>
               <span className="info-desc">Pune, Maharashtra</span>
             </div>
-            <div className="info-box">
-              <span className="info-title">Email</span>
+            <div className="info-box glass-panel">
+              <span className="info-title">EMAIL</span>
               <span className="info-desc">rushibhosale1818@gmail.com</span>
             </div>
           </div>
           
-          <a href="https://drive.google.com/file/d/1lk9Q6Ux0pDw7ieLl07FwZUBG7Wfd6Z_n/view?usp=sharing" className="btn" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a href="/resume.pdf" download="Rushikesh_Bhosale_Resume.pdf" className="btn" target="_blank" rel="noopener noreferrer">DOWNLOAD RESUME</a>
         </div>
       </div>
     </section>

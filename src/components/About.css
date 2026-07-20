@@ -1,40 +1,81 @@
 .about-content {
   padding: 3rem;
   margin-top: 2rem;
+  border-left: 4px solid var(--accent-secondary);
+  border-right: 4px solid var(--accent-color);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(10, 10, 15, 0.9));
 }
 
 .about-text h3 {
   font-size: 1.8rem;
   color: var(--accent-color);
   margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--accent-glow);
 }
 
 .about-text p {
   color: var(--text-secondary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-size: 1.1rem;
+  font-family: 'Chakra Petch', sans-serif;
+  line-height: 1.8;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.about-text p::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--accent-secondary);
+  font-weight: bold;
 }
 
 .about-info {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 .info-box {
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.glass-panel:hover {
+  background: rgba(0, 243, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px var(--accent-glow);
+  border-color: var(--accent-color);
 }
 
 .info-title {
-  color: var(--accent-color);
-  font-weight: 600;
+  color: var(--accent-secondary);
+  font-weight: 700;
   font-size: 1.1rem;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .info-desc {
   color: var(--text-primary);
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
